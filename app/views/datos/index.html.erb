@@ -1,0 +1,27 @@
+
+
+<%for miembro in @personas%>
+	<table border = "2">
+		<tr>
+			<td colspan = "3"><%=miembro[:nombre]%></td>	
+		</tr>
+		<tr>
+			<td><%=miembro[:edad]%></td>
+			<td><%=miembro[:nivel]%></td>
+			<td><%=miembro[:ec]%></td>
+		</tr>
+		<tr>
+			<td><%=miembro[:tel]%></td>
+			<td colspan = "2"><%=miembro[:correo]%></td>
+		</tr>
+		<tr>
+			<td><%=miembro[:pass]%></td>
+			<td colspan = "2"><%=miembro[:donador]%></td>
+		</tr>
+		<tr>
+			<td><%=miembro[:pais]%></td>
+			<td colspan = "2"><%=image_tag 'fotos_perfil/'+miembro[:foto], size: '200x100'%></td>
+		</tr>
+	</table>	
+<%end%>
+

@@ -1,0 +1,26 @@
+<h1><%=@titulo ||= "Curso Ruby on Rails"%></h1>
+<%content_for :imagen do%>
+	<div class = "row">
+		<div class="col-md-9 col-md-offset-3">
+			
+		</div>
+	</div>
+<%end%>
+<div class="col-md-4 col-md-offset-3 jumbotron">
+	<div><%=if flash.now[:noticia] then flash.now[:notice] end  %></div>
+	<%=form_tag "" do%>
+		<%=label_tag :nombre,"Nombre:" %>
+		<%=text_field_tag :nombre,nil,:placeholder => "Su nombre"%>
+		<br>
+		<%=label_tag :asunto, "Asunto:"%>
+		<%=text_field_tag :asunto,nil,:placeholder => "¿Que desea tratar?"%>
+		<br>
+		<%=label_tag :email, "e-Mail:"%>
+		<%=email_field_tag :email,nil,:placeholder => "su_correo@dominio.com"%>
+		<br>
+		<%=label_tag :mensaje, "mensaje"%>
+		<%=text_area_tag :mensaje, nil, :size => "25x10"%>
+		<br>
+		<%=submit_tag "Enviar"%>
+	<%end%>
+</div>

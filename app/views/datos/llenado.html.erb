@@ -1,0 +1,36 @@
+<h1><%=@titulo.capitalize%></h1>
+
+<%=form_tag procesar_path, :multipart => true do%>
+	<%=label_tag 'nombre', 'Nombre:'%>
+	<%=text_field_tag 'nombre', nil, :size=>'30', :placeholder=>'ApellidoPaterno ApellidoMaterno Nombres' %></br>
+	<%=label_tag 'edad', 'Edad:'%>
+	<%=number_field_tag 'edad','18', :in => (18..100) %></br>
+	<%=label_tag 'poder','Nivel de pelea'%>
+	<%=range_field_tag 'poder', 100, :min => 0, :max => 9000%></br>
+	<%=search_field_tag 'busco',nil,:placeholder => 'Busqueda'%>
+	<hr>
+	<div>
+		<%=flash[:mensaje1]%>
+	</div><br>
+	<%=label_tag 'telefono','Telefono:'%>
+	<%=telephone_field_tag 'telefono',nil,placeholder: '2-598-855'%></br>
+	<div>
+		<%=flash[:mensaje2]%>
+	</div><br>
+	<%=label_tag 'correo', 'E-mail:'%>
+	<%=email_field_tag 'correo',nil,:placeholder => 'correo_ejemplo@domino.com'%></br>
+	<%=label_tag 'pass', 'contraseña'%>
+	<%=password_field_tag 'pass',nil, maxlength:'8', size:'5'%><br>
+	<hr>
+	<%=label_tag 'estado_civil','Estado Civil:'%><br>
+	<%=radio_button_tag 'EC','casado',cheked: true%><%=label_tag 'EC','casado'%><br>
+	<%=radio_button_tag 'EC','soltero'%><%=label_tag 'EC','soltero'%><br>
+	<%=label_tag 'donador', 'Donador de organos' %>
+	<%=check_box_tag 'donador','si',true%><br>
+	<%=select_tag 'pais', "<option>Mexico</option><option>Estados Unidos</option>".html_safe, :prompt => 'pais'%>
+	<br>
+	<%=file_field_tag 'archivo'%>
+	<br>
+	<%=submit_tag 'Enviar'%>
+
+<%end%>

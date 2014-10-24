@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%=render :partial => 'layouts/head'%>
+</head>
+<body>
+  <!-- contenedor -->
+  <div class="container">
+    <!-- cabecera -->
+    <%=render :partial => 'layouts/cabecera'%> 
+    <!-- fin cabecera -->
+    <!-- intro -->
+    <%if hay_banner? then%>
+      <%=yield :imagen%>
+    <%else%>  
+      <%=render :partial => 'layouts/intro'%>
+    <%end%>
+    <!-- fin de intro -->
+    <!-- seccioes -->
+    <%= yield :secciones %>
+    <!-- fin secciones -->
+  </div>
+  <!-- fin contenedor -->
+  <div class="row">  
+    <div class="col-md-10 col-md-offset-1">
+      <!-- es para llamar al contenido de la vista -->
+      <%=yield%>
+
+    </div>
+  </div>
+  <!-- footer -->
+  <%@arreglo = [1,2,"tres"]%>
+  <%= render :partial => 'layouts/footer', :collect => @arreglo%>  
+  <!-- end footer -->
+                    
+</body>
+</html>

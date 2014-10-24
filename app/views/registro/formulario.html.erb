@@ -1,0 +1,35 @@
+<%content_for :imagen do%>
+	<div class = "row">
+		<div class="col-md-9 col-md-offset-3">
+			<%=image_tag 'join_us.jpg', size:'627x285' %>
+		</div>
+	</div>
+<%end%>
+
+<%=form_tag procesar_path, :multipart =>true do %>
+	<div class="col-md-3 jumbotron">º
+		<%=label_tag "nombre", "Nombre:"%>
+		<%=text_field_tag "nombre",nil, placeholder: 'Fulanito'%></br>
+		<%=label_tag "apellido", "Apellido:"%>
+		<%=text_field_tag "apellido", nil, placeholder: 'López'%>
+	</div>
+
+	<div class="col-md-3 jumbotron">
+		<%=label_tag "edad", "Edad:"%>
+		<%=number_field_tag "edad",18, :in => (18..100)%></br>
+		<%=label_tag "ec", "Estado Civil:"%>
+		<%=select_tag "ec","<option>Soltero</option><option>Casado</option><option>Separado</option>".html_safe%>
+	</div>	
+
+	<div class="col-md-3 jumbotron">
+		<%=label_tag "tel", "Telefono:"%>
+		<%=phone_field_tag "tel",nil,:placeholder => "2-11-75-75"%></br>
+		<%=label_tag "correo", "E-mail:"%>
+		<%=email_field_tag "correo",nil,:placeholder => "nombre@ejemplo.com"%>
+	</div>	
+
+	<div class="col-md-3 jumbotron">
+		<%=file_field_tag :archivo%></br>
+		<%=submit_tag "enviar"%>
+	</div>	
+<%end%>	

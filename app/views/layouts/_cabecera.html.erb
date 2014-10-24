@@ -1,0 +1,13 @@
+<div class="row">
+      <div class="col-md-2" >
+        <%=enlace image_tag('logo.png', size:'200x200', :class => 'img-circle'), root_path%>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <!-- menu navegacion -->
+
+        <%=menu_navegacion({"inicio" => root_path, "quienes_somos" => conocenos_path,\
+         "servicios" => servicios_path, "contacto" => contacto_path,\
+          "Localizacion" => localizacion_path})%>
+        <!-- fin de menu nav -->
+      </div>
+    </div>

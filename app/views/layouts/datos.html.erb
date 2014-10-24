@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=@titulo%></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+	<%=link_to_unless_current 'despliegue', despliegue_path %>
+	<%=link_to_unless_current 'llenado', registro_path %>
+</div>
+<hr>
+<div>
+	<%=flash[:mensaje]%>
+</div>
+<%= yield %>
+
+</body>
+</html>
